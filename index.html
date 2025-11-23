@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musami Wambura | Portfolio</title>
+    <link rel="stylesheet" href="css/stylepage.css" />
+</head>
+<body>
+<!-- ================== BACKGROUND ELEMENTS ================== -->
+<div class="background-container">
+    <!-- Knight Parallax Background -->
+    <!-- I think a knight background of a picture using either unsplash
+    or another media would do well for the UI. Maybe also add parrallax
+    bckground b/c it would feel more interactive for the user and less
+    static-->
+    <div class="parallax-bg"></div>
+
+    <!-- Star Widgets -->
+    <!-- unsure on how to make these super interactive + functional
+    however adds too immersive experience of the webpage-->
+    <div class="stars">
+        <div class="star" style="--i:1;"></div>
+        <div class="star" style="--i:2;"></div>
+        <div class="star" style="--i:3;"></div>
+        <div class="star" style="--i:4;"></div>
+        <div class="star" style="--i:5;"></div>
+        <div class="star" style="--i:6;"></div>
+        <div class="star" style="--i:7;"></div>
+        <div class="star" style="--i:8;"></div>
+    </div>
+</div>
+
+<!-- ================== NAVIGATION ================== -->
+<header>
+    <nav class="navbar">
+        <h1 class="logo">Musami Wambura</h1>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="hero.html">Tech Hero</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ================== HERO SECTION ================== -->
+<section class="hero-section">
+    <div class="hero-text">
+        <h2>Welcome to My Digital Space</h2>
+        <p>Exploring technology, identity, and inclusion — all in one place.</p>
+        <a href="about.html" class="btn">Learn More About Me</a>
+    </div>
+
+    <!-- Clock Widget -->
+    <!-- a clcok widget including the date was added to monitor time simplply
+    and add to design experience of the webpage and get familiar with using div
+    class (also get rid of such open space -->
+    <div class="widget clock-widget">
+        <div class="widget-title">Local Time</div>
+        <div id="clock">--:--</div>
+        <div id="date">Loading date...</div>
+    </div>
+</section>
+
+<!-- ================== FEATURE SECTION ================== -->
+<main class="features">
+    <div class="feature" id="feature-about">
+        <h3>About Me</h3>
+        <p>Learn about my background, academic journey, and what inspires me in the world of information science.</p>
+        <a href="about.html" class="link">→ Visit Page</a>
+    </div>
+
+    <div class="feature" id="feature-resources">
+        <h3>Implicit Bias Resources</h3>
+        <p>Explore curated links and thoughts on intersectionality and implicit bias in tech and everyday life.</p>
+        <a href="resources.html" class="link">→ Visit Page</a>
+    </div>
+
+    <div class="feature" id="feature-hero">
+        <h3>My Tech Hero</h3>
+        <p>Meet someone breaking barriers in the tech world — a leader who inspires innovation and equity.</p>
+        <a href="hero.html" class="link">→ Visit Page</a>
+    </div>
+
+<!-- Quick Action Bubbles -->
+<div class="quick-actions">
+    <button class="bubble" data-target="feature-about">✦</button>
+    <button class="bubble" data-target="feature-resources">📚</button>
+    <button class="bubble" data-target="feature-hero">★</button>
+</div>
+
+<!-- ================== FOOTER ================== -->
+<footer>
+    <p>© 2025 Musami Wambura | Built by Hand with HTML & CSS</p>
+    <p><a href="mailto:musami@email.com">Contact Me</a></p>
+</footer>
+
+<!-- ================== SCRIPTS ================== -->
+<script>
+  // Clock
+  function updateClock(){
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2,'0');
+    const mm = String(now.getMinutes()).padStart(2,'0');
+    document.getElementById('clock').textContent = hh + ':' + mm;
+    document.getElementById('date').textContent = now.toLocaleDateString();
+  }
+  updateClock();
+  setInterval(updateClock, 30000);
+
+  // Quick nav bubbles
+  function scrollToFeature(id){
+    const el = document.getElementById(id);
+    if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+  document.querySelectorAll('.bubble').forEach(btn=>{
+    btn.addEventListener('click', ()=>scrollToFeature(btn.dataset.target));
+  });
+
+  // Parallax: Knight background + stars
+  const parallaxBg = document.querySelector('.parallax-bg');
+  const stars = document.querySelectorAll('.star');
+
+  window.addEventListener('scroll', ()=>{
+    const scrollY = window.scrollY;
+
+    // Knight parallax
+    parallaxBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+
+    // Star drift at different speeds
+    stars.forEach((star,index)=>{
+      const speed = 0.2 + (index * 0.05);
+      star.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  });
+</script>
+</body>
+</html>
+<!-- I will say that the first iteration of this project encontoured allot of issues
+in realtion too getting 1. the widgets too work additionally the clock widget did not work mutltiple
+trys, making the image in the background took so long to render and actually have fully realized
+and when it was the color and the adjoining pages were so troublesome to intially set up. If i were
+to fix or give advice to when I first started this, I would keep the page simple,but
+its design mattered heavily too me, glad it turned out well-->
