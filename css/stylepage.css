@@ -264,25 +264,3 @@ footer a:hover{text-decoration:underline;}
   background: url('../images/implicit.jpg') center/cover no-repeat;
   filter: brightness(0.6); /* darken for readability */
 }
-/* ================================
-   PROJECT 3 — MACHINE LEARNING PAGE
-   Embedded iframe styling + section Arghsiogsdoisfg please wrok!!!!
-=================================== */
-
-.ml-section {
-  padding: 80px 20px;
-  width: 100%;        /* full width */
-  margin: 0;          /* remove centering */
-  border-radius: 0;   /* optional, remove rounded corners */
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  box-shadow: none;   /* optional, remove shadow */
-  border-top: 2px solid rgba(255,255,255,0.12);
-}
-
-.ml-section iframe {
-  width: 100%;
-  height: 850px;       /* keep iframe height */
-  border-radius: 0;    /* optional */
-  box-shadow: none;    /* optional */
-}
