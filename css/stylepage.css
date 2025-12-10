@@ -264,3 +264,58 @@ footer a:hover{text-decoration:underline;}
   background: url('../images/implicit.jpg') center/cover no-repeat;
   filter: brightness(0.6); /* darken for readability */
 }
+/* ================================
+   PROJECT 3 — MACHINE LEARNING PAGE
+   Embedded iframe styling + section Arghsiogsdoisfg please wrok!!!!
+=================================== */
+
+.ml-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-radius: 20px;
+
+  /* matches your glass styling */
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 50px rgba(0,0,0,0.55);
+
+  /* subtle divider */
+  border-top: 2px solid rgba(255,255,255,0.12);
+}
+
+.ml-section h2 {
+  text-align: center;
+  color: var(--lav);
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+.ml-section p {
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+
+.ml-section iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 850px;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Keep layout stable on small screens */
+@media (max-width: 768px) {
+  .ml-section iframe {
+    height: 700px;
+  }
+}
